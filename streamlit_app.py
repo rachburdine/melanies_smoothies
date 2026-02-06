@@ -20,6 +20,8 @@ my_dataframe = session.table("smoothies.public.fruit_options").select (col('FRUI
 # st.dataframe(data=my_dataframe, use_container_width=True)
 # st.stop()
 
+conn = st.connection("snowflake")
+
 # Convert the Snowpark Dataframe to a Pandas Dataframe so we can use the LOC function 
 pd_df = conn.query("""
     SELECT FRUIT_NAME, SEARCH_ON
